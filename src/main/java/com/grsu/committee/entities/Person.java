@@ -2,7 +2,8 @@ package com.grsu.committee.entities;
 
 import java.util.Objects;
 
-public abstract class Person {
+public abstract class Person extends AbstractModel {
+
     private String firstName;
     private String lastName;
     private int age;
@@ -35,6 +36,7 @@ public abstract class Person {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Person person = (Person) o;
         return age == person.age &&
                 Objects.equals(firstName, person.firstName) &&
@@ -44,7 +46,7 @@ public abstract class Person {
     @Override
     public int hashCode() {
 
-        return Objects.hash(firstName, lastName, age);
+        return Objects.hash(super.hashCode(), firstName, lastName, age);
     }
 
     @Override
@@ -53,6 +55,6 @@ public abstract class Person {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-                '}';
+                "} " + super.toString();
     }
 }

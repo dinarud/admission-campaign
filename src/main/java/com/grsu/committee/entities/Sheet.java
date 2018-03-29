@@ -1,85 +1,72 @@
 package com.grsu.committee.entities;
 
-import com.grsu.committee.enums.EnrollmentForm;
-import com.grsu.committee.enums.Subject;
-
-import java.util.HashMap;
 import java.util.Objects;
+import java.util.Set;
 
-public class Sheet {
+public class Sheet extends AbstractModel {
 
-    private int year;
-    private String fullEnrolleeName;
-    private String facultyName;
-    private HashMap<Subject, Integer> pointsMap;
-    private EnrollmentForm enrollmentForm;
+    private int yearOfReceipt;
+    private int fullMembersNumber;
+    private Faculty faculty;
+    private Set<Enrollee> registeredEnrollee;
 
-    public String getFullEnrolleeName() {
-        return fullEnrolleeName;
+    public int getYearOfReceipt() {
+        return yearOfReceipt;
     }
 
-    public void setFullEnrolleeName(String fullEnrolleeName) {
-        this.fullEnrolleeName = fullEnrolleeName;
+    public void setYearOfReceipt(int yearOfReceipt) {
+        this.yearOfReceipt = yearOfReceipt;
     }
 
-    public String getFacultyName() {
-        return facultyName;
+    public int getFullMembersNumber() {
+        return fullMembersNumber;
     }
 
-    public void setFacultyName(String facultyName) {
-        this.facultyName = facultyName;
+    public void setFullMembersNumber(int fullMembersNumber) {
+        this.fullMembersNumber = fullMembersNumber;
     }
 
-    public HashMap<Subject, Integer> getPointsMap() {
-        return pointsMap;
+    public Faculty getFaculty() {
+        return faculty;
     }
 
-    public void setPointsMap(HashMap<Subject, Integer> pointsMap) {
-        this.pointsMap = pointsMap;
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
     }
 
-    public EnrollmentForm getEnrollmentForm() {
-        return enrollmentForm;
+    public Set<Enrollee> getRegisteredEnrollee() {
+        return registeredEnrollee;
     }
 
-    public void setEnrollmentForm(EnrollmentForm enrollmentForm) {
-        this.enrollmentForm = enrollmentForm;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
+    public void setRegisteredEnrollee(Set<Enrollee> registeredEnrollee) {
+        this.registeredEnrollee = registeredEnrollee;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Sheet sheet = (Sheet) o;
-        return year == sheet.year &&
-                Objects.equals(fullEnrolleeName, sheet.fullEnrolleeName) &&
-                Objects.equals(facultyName, sheet.facultyName) &&
-                Objects.equals(pointsMap, sheet.pointsMap) &&
-                enrollmentForm == sheet.enrollmentForm;
+        return yearOfReceipt == sheet.yearOfReceipt &&
+                fullMembersNumber == sheet.fullMembersNumber &&
+                Objects.equals(faculty, sheet.faculty) &&
+                Objects.equals(registeredEnrollee, sheet.registeredEnrollee);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(year, fullEnrolleeName, facultyName, pointsMap, enrollmentForm);
+        return Objects.hash(super.hashCode(), yearOfReceipt, fullMembersNumber, faculty, registeredEnrollee);
     }
 
     @Override
     public String toString() {
         return "Sheet{" +
-                "year=" + year +
-                ", fullEnrolleeName='" + fullEnrolleeName + '\'' +
-                ", facultyName='" + facultyName + '\'' +
-                ", pointsMap=" + pointsMap +
-                ", enrollmentForm=" + enrollmentForm +
-                '}';
+                "yearOfReceipt=" + yearOfReceipt +
+                ", fullMembersNumber=" + fullMembersNumber +
+                ", faculty=" + faculty +
+                ", registeredEnrollee=" + registeredEnrollee +
+                "} " + super.toString();
     }
 }

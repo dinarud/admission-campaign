@@ -5,7 +5,7 @@ import com.grsu.committee.enums.Subject;
 import java.util.Objects;
 import java.util.Set;
 
-public class Faculty {
+public class Faculty extends AbstractModel{
     private String name;
     private Set<Subject> subjectsRequested;
 
@@ -29,6 +29,7 @@ public class Faculty {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Faculty faculty = (Faculty) o;
         return Objects.equals(name, faculty.name) &&
                 Objects.equals(subjectsRequested, faculty.subjectsRequested);
@@ -37,7 +38,7 @@ public class Faculty {
     @Override
     public int hashCode() {
 
-        return Objects.hash(name, subjectsRequested);
+        return Objects.hash(super.hashCode(), name, subjectsRequested);
     }
 
     @Override
@@ -45,6 +46,6 @@ public class Faculty {
         return "Faculty{" +
                 "name='" + name + '\'' +
                 ", subjectsRequested=" + subjectsRequested +
-                '}';
+                "} " + super.toString();
     }
 }

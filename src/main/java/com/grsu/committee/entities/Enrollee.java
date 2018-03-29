@@ -14,8 +14,16 @@ public class Enrollee extends Person {
         return faculty;
     }
 
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
+    }
+
     public HashMap<Subject, Integer> getPointsMap() {
         return pointsMap;
+    }
+
+    public void setPointsMap(HashMap<Subject, Integer> pointsMap) {
+        this.pointsMap = pointsMap;
     }
 
     @Override
