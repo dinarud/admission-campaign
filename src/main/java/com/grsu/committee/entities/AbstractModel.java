@@ -3,7 +3,7 @@ package com.grsu.committee.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class AbstractModel implements Serializable {
+public abstract class AbstractModel implements Serializable {
 
     private Long id;
 

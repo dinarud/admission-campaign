@@ -1,14 +1,14 @@
 package com.grsu.committee.entities;
 
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 public class Sheet extends AbstractModel {
 
     private int yearOfReceipt;
-    private int fullMembersNumber;
+    private int maxMembersNumber;
     private Faculty faculty;
-    private Set<Enrollee> registeredEnrollee;
+    private List<Enrollee> registeredEnrollee;
 
     public int getYearOfReceipt() {
         return yearOfReceipt;
@@ -18,12 +18,12 @@ public class Sheet extends AbstractModel {
         this.yearOfReceipt = yearOfReceipt;
     }
 
-    public int getFullMembersNumber() {
-        return fullMembersNumber;
+    public int getMaxMembersNumber() {
+        return maxMembersNumber;
     }
 
-    public void setFullMembersNumber(int fullMembersNumber) {
-        this.fullMembersNumber = fullMembersNumber;
+    public void setMaxMembersNumber(int maxMembersNumber) {
+        this.maxMembersNumber = maxMembersNumber;
     }
 
     public Faculty getFaculty() {
@@ -34,11 +34,11 @@ public class Sheet extends AbstractModel {
         this.faculty = faculty;
     }
 
-    public Set<Enrollee> getRegisteredEnrollee() {
+    public List<Enrollee> getRegisteredEnrollee() {
         return registeredEnrollee;
     }
 
-    public void setRegisteredEnrollee(Set<Enrollee> registeredEnrollee) {
+    public void setRegisteredEnrollee(List<Enrollee> registeredEnrollee) {
         this.registeredEnrollee = registeredEnrollee;
     }
 
@@ -49,7 +49,7 @@ public class Sheet extends AbstractModel {
         if (!super.equals(o)) return false;
         Sheet sheet = (Sheet) o;
         return yearOfReceipt == sheet.yearOfReceipt &&
-                fullMembersNumber == sheet.fullMembersNumber &&
+                maxMembersNumber == sheet.maxMembersNumber &&
                 Objects.equals(faculty, sheet.faculty) &&
                 Objects.equals(registeredEnrollee, sheet.registeredEnrollee);
     }
@@ -57,14 +57,14 @@ public class Sheet extends AbstractModel {
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), yearOfReceipt, fullMembersNumber, faculty, registeredEnrollee);
+        return Objects.hash(super.hashCode(), yearOfReceipt, maxMembersNumber, faculty, registeredEnrollee);
     }
 
     @Override
     public String toString() {
         return "Sheet{" +
                 "yearOfReceipt=" + yearOfReceipt +
-                ", fullMembersNumber=" + fullMembersNumber +
+                ", maxMembersNumber=" + maxMembersNumber +
                 ", faculty=" + faculty +
                 ", registeredEnrollee=" + registeredEnrollee +
                 "} " + super.toString();

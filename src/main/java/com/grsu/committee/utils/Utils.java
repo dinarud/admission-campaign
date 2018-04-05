@@ -3,6 +3,8 @@ package com.grsu.committee.utils;
 import com.grsu.committee.entities.Administrator;
 import com.grsu.committee.entities.Enrollee;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 
 public class Utils {
@@ -17,7 +19,7 @@ public class Utils {
             "Sanchez", "Woodard", "Thomas", "Larson", "Barrett", "Mata", "Blackburn", "Yates", "Valencia", "Cobb", "Weber",
             "Kim", "Guerra", "Munoz", "Holden", "Thompson", "Leon", "Bender", "Buckley", "Gallegos", "Huff", "Jensen");
 
-    private static Random random;
+    private static Random random = new Random();
 
     public static String generateRandomFirstName() {
         return firstNames.get(random.nextInt(firstNames.size()));
@@ -51,6 +53,21 @@ public class Utils {
 
             return o2SummaryPoints.compareTo(o1SummaryPoints);
         };
+    }
+
+
+    public static Properties getProperties() {
+        Properties properties = new Properties();
+        String propertiesFileName = "app.properties";
+        try {
+            InputStream in = Utils.class.getClassLoader().getResourceAsStream(propertiesFileName);
+            properties.load(in);
+            in.close();
+        } catch (IOException e) {
+            System.out.println("Exception: " + e);
+        }
+
+        return properties;
     }
 
     private static int calculateSummaryPoints(Collection<Integer> pointsList) {

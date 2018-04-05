@@ -1,12 +1,11 @@
 package com.grsu.committee.service;
 
 import com.grsu.committee.entities.Enrollee;
-import com.grsu.committee.entities.Sheet;
 
-import java.util.Set;
+import java.util.List;
 
 public interface SheetService {
 
-    Set<Enrollee> ResolveStudents(Sheet sheet);
+    List<Enrollee> resolveStudents(int year);
 
 }
