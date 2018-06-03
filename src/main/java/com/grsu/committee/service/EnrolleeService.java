@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public interface EnrolleeService {
 
-    Enrollee register(Enrollee enrollee, String facultyName);
+    Enrollee addEnrolleeToFaculty(Enrollee enrollee, String facultyName);
 
     Enrollee putMarks(Enrollee enrollee, HashMap<Subject, Integer> pointsMap);
 }

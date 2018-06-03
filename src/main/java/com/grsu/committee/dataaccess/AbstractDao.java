@@ -4,12 +4,14 @@ import com.grsu.committee.entities.*;
 import com.grsu.committee.table.*;
 import com.grsu.committee.utils.Utils;
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.converters.enums.EnumConverter;
+import com.thoughtworks.xstream.converters.enums.EnumSetConverter;
+import com.thoughtworks.xstream.mapper.Mapper;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
 import java.util.List;
-import java.util.Properties;
 
 public abstract class AbstractDao<T extends AbstractTable<E>, E extends AbstractModel> implements IXmlDao<E> {
 
@@ -28,9 +30,11 @@ public abstract class AbstractDao<T extends AbstractTable<E>, E extends Abstract
 
         Class<?>[] classes = new Class[]{Administrator.class, AdministratorTable.class,
                 Enrollee.class, EnrolleeTable.class, Faculty.class, FacultyTable.class,
-                Sheet.class, SheetTable.class};
+                Sheet.class, SheetTable.class, UserCredentials.class, UserCredentialsTable.class};
         XStream.setupDefaultSecurity(xStream);
         xStream.allowTypes(classes);
+//        xStream.registerConverter(new EnumConverter());
+//        xStream.registerConverter(new EnumSetConverter());
     }
 
     @Override

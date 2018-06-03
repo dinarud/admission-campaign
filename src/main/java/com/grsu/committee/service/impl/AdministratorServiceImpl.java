@@ -18,7 +18,7 @@ public class AdministratorServiceImpl extends AbstractServiceImpl<AdministratorT
     }
 
     @Override
-    public void register(Sheet sheet, Enrollee enrollee) {
+    public void addEnrolleeToSheet(Sheet sheet, Enrollee enrollee) {
         if (sheet.getFaculty() == null) {
             sheet.setFaculty(enrollee.getFaculty());
         }

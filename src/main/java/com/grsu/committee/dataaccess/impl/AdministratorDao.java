@@ -7,7 +7,6 @@ import com.grsu.committee.table.AdministratorTable;
 import java.io.Serializable;
 
 public class AdministratorDao extends AbstractDao<AdministratorTable, Administrator> implements Serializable {
-    private Long id;
 
     @Override
     protected Class<AdministratorTable> getTableClass() {

@@ -2,12 +2,12 @@ package com.grsu.committee.entities;
 
 import com.grsu.committee.enums.Subject;
 
+import java.util.EnumSet;
 import java.util.Objects;
-import java.util.Set;
 
-public class Faculty extends AbstractModel{
+public class Faculty extends AbstractModel {
     private String name;
-    private Set<Subject> subjectsRequested;
+    private EnumSet<Subject> subjectsRequested;
 
     public String getName() {
         return name;
@@ -17,11 +17,11 @@ public class Faculty extends AbstractModel{
         this.name = name;
     }
 
-    public Set<Subject> getSubjectsRequested() {
+    public EnumSet<Subject> getSubjectsRequested() {
         return subjectsRequested;
     }
 
-    public void setSubjectsRequested(Set<Subject> subjectsRequested) {
+    public void setSubjectsRequested(EnumSet<Subject> subjectsRequested) {
         this.subjectsRequested = subjectsRequested;
     }
 
@@ -43,9 +43,6 @@ public class Faculty extends AbstractModel{
 
     @Override
     public String toString() {
-        return "Faculty{" +
-                "name='" + name + '\'' +
-                ", subjectsRequested=" + subjectsRequested +
-                "} " + super.toString();
+        return name;
     }
 }

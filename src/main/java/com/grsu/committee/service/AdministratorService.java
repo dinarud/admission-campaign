@@ -5,6 +5,6 @@ import com.grsu.committee.entities.Sheet;
 
 public interface AdministratorService {
 
-    void register(Sheet sheet, Enrollee enrollee);
+    void addEnrolleeToSheet(Sheet sheet, Enrollee enrollee);
 
 }

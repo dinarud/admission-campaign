@@ -5,7 +5,7 @@ import com.grsu.committee.enums.Subject;
 import java.util.HashMap;
 import java.util.Objects;
 
-public class Enrollee extends Person {
+public class Enrollee extends User {
 
     private Faculty faculty;
     private HashMap<Subject, Integer> pointsMap;

@@ -1,6 +1,6 @@
 package com.grsu.committee.entities;
 
-public class Administrator extends Person {
+public class Administrator extends User {
 
     @Override
     public boolean equals(Object o) {

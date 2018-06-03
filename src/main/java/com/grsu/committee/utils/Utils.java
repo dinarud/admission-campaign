@@ -2,6 +2,7 @@ package com.grsu.committee.utils;
 
 import com.grsu.committee.entities.Administrator;
 import com.grsu.committee.entities.Enrollee;
+import com.grsu.committee.enums.Subject;
 
 import java.io.IOException;
 import java.io.InputStream;

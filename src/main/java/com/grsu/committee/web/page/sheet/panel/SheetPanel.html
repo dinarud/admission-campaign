@@ -1,0 +1,26 @@
+<wicket:panel>
+    <table class="list-table">
+        <thead>
+        <tr>
+            <wicket:enclosure child="label-id">
+                <th><span wicket:id="label-id"/></th>
+            </wicket:enclosure>
+            <th>Дата подачи</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Общий балл</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr wicket:id="rows">
+            <wicket:enclosure child="id">
+                <td class="column-3"><span wicket:id="id"/></td>
+            </wicket:enclosure>
+            <td class="column-2"><span wicket:id="created"/></td>
+            <td class="column-2"><span wicket:id="lastName"/></td>
+            <td class="column-2"><span wicket:id="firstName"/></td>
+            <td class="column-1"><span wicket:id="sum"/></td>
+        </tr>
+        </tbody>
+    </table>
+</wicket:panel>

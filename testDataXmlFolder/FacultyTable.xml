@@ -1,0 +1,14 @@
+<com.grsu.committee.table.FacultyTable>
+  <rows>
+    <com.grsu.committee.entities.Faculty>
+      <id>1184160805688309</id>
+      <name>Факультет информатики</name>
+      <subjectsRequested enum-type="com.grsu.committee.enums.Subject">MATH,PHYSIC,RUSSIAN,SCHOOL_CERTIFICATE</subjectsRequested>
+    </com.grsu.committee.entities.Faculty>
+    <com.grsu.committee.entities.Faculty>
+      <id>1184286036173150</id>
+      <name>Факультет журналистики</name>
+      <subjectsRequested enum-type="com.grsu.committee.enums.Subject">RUSSIAN,ENGLISH,HISTORY,SCHOOL_CERTIFICATE</subjectsRequested>
+    </com.grsu.committee.entities.Faculty>
+  </rows>
+</com.grsu.committee.table.FacultyTable>

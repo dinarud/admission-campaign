@@ -7,17 +7,18 @@ import com.grsu.committee.service.SheetService;
 import com.grsu.committee.table.SheetTable;
 import com.grsu.committee.utils.Utils;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SheetServiceImpl extends AbstractServiceImpl<SheetTable, Sheet> implements SheetService {
+public class SheetServiceImpl extends AbstractServiceImpl<SheetTable, Sheet> implements SheetService, Serializable {
 
     public SheetServiceImpl() {
         dao = new SheetDao();
     }
 
     @Override
-    public List<Enrollee> resolveStudents(int year) {
+    public List<Enrollee> resolveStudents(int year, String facultyName) {
 
         Sheet yearSheet = null;
 
@@ -33,14 +34,22 @@ public class SheetServiceImpl extends AbstractServiceImpl<SheetTable, Sheet> imp
             return new ArrayList<>();
         }
 
-        List<Enrollee> sortedFromBestEnrollees = new ArrayList<>(yearSheet.getRegisteredEnrollee());
-        sortedFromBestEnrollees.sort(Utils.getSheetEnrolleeComparator());
-
-        if (sortedFromBestEnrollees.size() > yearSheet.getMaxMembersNumber()) {
-            sortedFromBestEnrollees.subList(yearSheet.getMaxMembersNumber(), sortedFromBestEnrollees.size()).clear();
+        List<Enrollee> filteredEnrollees = new ArrayList<>();
+        if (facultyName != null && !facultyName.isEmpty()) {
+            for (Enrollee enrollee : yearSheet.getRegisteredEnrollee()) {
+                if (enrollee.getFaculty().getName().equalsIgnoreCase(facultyName)) {
+                    filteredEnrollees.add(enrollee);
+                }
+            }
         }
 
-        return sortedFromBestEnrollees;
+        filteredEnrollees.sort(Utils.getSheetEnrolleeComparator());
+
+        if (filteredEnrollees.size() > yearSheet.getMaxMembersNumber()) {
+            filteredEnrollees.subList(yearSheet.getMaxMembersNumber(), filteredEnrollees.size()).clear();
+        }
+
+        return filteredEnrollees;
     }
 
 }

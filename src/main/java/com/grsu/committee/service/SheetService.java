@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface SheetService {
 
-    List<Enrollee> resolveStudents(int year);
+    List<Enrollee> resolveStudents(int year, String facultyName);
 
 }

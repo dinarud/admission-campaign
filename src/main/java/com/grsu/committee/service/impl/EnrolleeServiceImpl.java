@@ -21,7 +21,7 @@ public class EnrolleeServiceImpl extends AbstractServiceImpl<EnrolleeTable, Enro
     }
 
     @Override
-    public Enrollee register(Enrollee enrollee, String facultyName) {
+    public Enrollee addEnrolleeToFaculty(Enrollee enrollee, String facultyName) {
         List<Faculty> facultyList = facultyDao.getAll();
 
         Faculty facultyByName = null;

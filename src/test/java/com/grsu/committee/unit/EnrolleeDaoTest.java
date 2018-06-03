@@ -1,4 +1,4 @@
-package com.grsu.committee;
+package com.grsu.committee.unit;
 
 import com.grsu.committee.dataaccess.impl.EnrolleeDao;
 import com.grsu.committee.entities.Enrollee;

@@ -1,0 +1,20 @@
+<wicket:extend>
+    <h2>Ведомость</h2>
+    <form wicket:id="filter_form" class="form">
+        <div class="input">
+            <wicket:label for="year">Год поступления</wicket:label>
+            <select wicket:id="year"></select>
+        </div>
+        <div class="input">
+            <wicket:label for="faculty">Факультет</wicket:label>
+            <select wicket:id="faculty"></select>
+        </div>
+        <div>
+            <button type="submit" wicket:id="filterButton" class="btn waves-effect">Выбрать</button>
+        </div>
+    </form>
+
+    <div wicket:id="list-panel"></div>
+
+    <div wicket:id="feedback"></div>
+</wicket:extend>

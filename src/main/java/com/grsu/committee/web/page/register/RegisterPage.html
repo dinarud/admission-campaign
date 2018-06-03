@@ -1,0 +1,74 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Register</title>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet'
+          type='text/css'/>
+
+</head>
+<body>
+
+<div class="form">
+    <h1>
+        Регистрация
+    </h1>
+    <form wicket:id="register_form">
+        <p class="input">
+            <wicket:label for="email">Email</wicket:label>
+            <input type="email" wicket:id="email" autocomplete="off"/>
+        </p>
+        <p class="input">
+            <wicket:label for="password">Пароль</wicket:label>
+            <input type="password" wicket:id="password"/>
+        </p>
+        <p class="input">
+            <wicket:label for="firstName">Имя</wicket:label>
+            <input type="text" wicket:id="firstName"/>
+        </p>
+        <p class="input">
+            <wicket:label for="lastName">Фамилия</wicket:label>
+            <input type="text" wicket:id="lastName"/>
+        </p>
+        <p class="input">
+            <wicket:label for="age">Возраст</wicket:label>
+            <input type="number" wicket:id="age"/>
+        </p>
+        <p class="input">
+            <wicket:label for="faculty">Факультет</wicket:label>
+            <select wicket:id="faculty"></select>
+            <span wicket:id="facultySubjects"></span>
+        </p>
+        <p class="input">
+            <wicket:label for="subject1K">Предмет</wicket:label>
+            <select wicket:id="subject1K"></select>
+            <wicket:label for="subject1V">Баллы</wicket:label>
+            <input type="number" wicket:id="subject1V"/>
+        </p>
+        <p class="input">
+            <wicket:label for="subject2K">Предмет</wicket:label>
+            <select wicket:id="subject2K"></select>
+            <wicket:label for="subject2V">Баллы</wicket:label>
+            <input type="number" wicket:id="subject2V"/>
+        </p>
+        <p class="input">
+            <wicket:label for="subject3K">Предмет</wicket:label>
+            <select wicket:id="subject3K"></select>
+            <wicket:label for="subject3V">Баллы</wicket:label>
+            <input type="number" wicket:id="subject3V"/>
+        </p>
+        <p class="input">
+            <wicket:label for="subject4K">Предмет</wicket:label>
+            <select wicket:id="subject4K"></select>
+            <wicket:label for="subject4V">Баллы</wicket:label>
+            <input type="number" wicket:id="subject4V"/>
+        </p>
+        <button type="submit" class="btn waves-effect" wicket:id="submit-btn">
+            <b>Зарегистрироваться</b>
+        </button>
+    </form>
+    <div wicket:id="feedback"></div>
+</div>
+
+</body>
+</html>
+

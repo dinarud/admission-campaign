@@ -1,3 +1,72 @@
 <com.grsu.committee.table.EnrolleeTable>
-  <rows/>
+  <rows>
+    <com.grsu.committee.entities.Enrollee>
+      <id>1208763208933649</id>
+      <firstName>Иван</firstName>
+      <lastName>Иванов</lastName>
+      <age>19</age>
+      <created>2018-06-03 19:05:18.282 UTC</created>
+      <userCredentials>
+        <id>1208763157288112</id>
+        <email>ivanov.ivan@gmail.com</email>
+        <password>123</password>
+        <role>USER</role>
+      </userCredentials>
+      <faculty>
+        <id>1184160805688309</id>
+        <name>Факультет информатики</name>
+        <subjectsRequested enum-type="com.grsu.committee.enums.Subject">MATH,PHYSIC,RUSSIAN,SCHOOL_CERTIFICATE</subjectsRequested>
+      </faculty>
+      <pointsMap>
+        <entry>
+          <com.grsu.committee.enums.Subject>MATH</com.grsu.committee.enums.Subject>
+          <int>67</int>
+        </entry>
+        <entry>
+          <com.grsu.committee.enums.Subject>RUSSIAN</com.grsu.committee.enums.Subject>
+          <int>63</int>
+        </entry>
+        <entry>
+          <com.grsu.committee.enums.Subject>SCHOOL_CERTIFICATE</com.grsu.committee.enums.Subject>
+          <int>94</int>
+        </entry>
+      </pointsMap>
+    </com.grsu.committee.entities.Enrollee>
+    <com.grsu.committee.entities.Enrollee>
+      <id>1215500838577998</id>
+      <firstName>Пётр</firstName>
+      <lastName>Петрович</lastName>
+      <age>19</age>
+      <created>2018-06-03 20:57:35.911 UTC</created>
+      <userCredentials>
+        <id>1215500805322220</id>
+        <email>petia@gmail.com</email>
+        <password>123</password>
+        <role>USER</role>
+      </userCredentials>
+      <faculty>
+        <id>1184160805688309</id>
+        <name>Факультет информатики</name>
+        <subjectsRequested enum-type="com.grsu.committee.enums.Subject">MATH,PHYSIC,RUSSIAN,SCHOOL_CERTIFICATE</subjectsRequested>
+      </faculty>
+      <pointsMap>
+        <entry>
+          <com.grsu.committee.enums.Subject>MATH</com.grsu.committee.enums.Subject>
+          <int>45</int>
+        </entry>
+        <entry>
+          <com.grsu.committee.enums.Subject>RUSSIAN</com.grsu.committee.enums.Subject>
+          <int>78</int>
+        </entry>
+        <entry>
+          <com.grsu.committee.enums.Subject>SCHOOL_CERTIFICATE</com.grsu.committee.enums.Subject>
+          <int>83</int>
+        </entry>
+        <entry>
+          <com.grsu.committee.enums.Subject>PHYSIC</com.grsu.committee.enums.Subject>
+          <int>35</int>
+        </entry>
+      </pointsMap>
+    </com.grsu.committee.entities.Enrollee>
+  </rows>
 </com.grsu.committee.table.EnrolleeTable>
